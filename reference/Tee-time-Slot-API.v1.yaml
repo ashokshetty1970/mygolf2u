@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: Tee-time Slot API
+  version: '1.0'
+  contact:
+    name: Ashok Shetty
+    email: ashok@britesoftcorp.com
+  description: APIs for generating template slots for rule and generation of actuals slots.
+servers:
+  - url: 'http://devlet.mygolf2u.com/rest/tee-time/slot'
+    description: myGolf2u Devlet
+paths:
+  /generate-template-slots:
+    post:
+      summary: ''
+      operationId: post-generate-template-slots
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: boolean
+        '409':
+          description: Conflict
+          headers:
+            Error-Code:
+              schema:
+                type: string
+              description: The error code
+            Error-Message:
+              schema:
+                type: string
+              description: The full description of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+              examples: {}
+      description: Generate the template slots for a given day or for all the days in the rule or for a specific day
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: ruleId
+          description: The ID of the slot generation rule. This parameter is mandatory.
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: dayName
+          description: The name of the day. This is short name which is part of the key in day rule table. This is an optional parameter. If provided the templates are generated only for the given day.
+components:
+  schemas:
+    Errors:
+      title: Errors
+      type: object
+      properties:
+        errors:
+          type: array
+          description: 'List of all error messages. The main error message will be in the header Error-Message. If any additional error messages are there, then this will contain all the errors.'
+          items:
+            type: string

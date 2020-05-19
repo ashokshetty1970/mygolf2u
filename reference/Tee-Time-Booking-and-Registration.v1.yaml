@@ -1,15 +1,50 @@
 openapi: 3.0.0
 info:
-  title: Tee-time Slot API
+  title: Tee-time Booking And Registration APIs
   version: '1.0'
   contact:
     name: Ashok Shetty
     email: ashok@britesoftcorp.com
-  description: APIs for generating template slots for rule and generation of actuals slots.
+  description: 'Set of APIs '
 servers:
   - url: 'http://devlet.mygolf2u.com/rest/tee-time'
     description: myGolf2u Devlet
 paths:
+  /activate:
+    post:
+      summary: ''
+      operationId: post-activate
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: boolean
+                description: 'Returns true on successfull activation. In case of errors, it returns HttpStatus.CONFLICT'
+        '409':
+          description: Conflict
+          headers:
+            Error-Code:
+              schema:
+                type: string
+              description: The unique error code when the activation fails.
+            Error-Message:
+              schema:
+                type: string
+              description: Detailed error messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+      description: Activate the booking and registration feature for a given clubs
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: clubId
+          description: The ID of the club for which the feature needs to be activated.
+          required: true
   /generate-template-slots:
     post:
       summary: Generate Template Slots

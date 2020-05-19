@@ -99,8 +99,6 @@ paths:
           in: query
           name: endDate
           description: 'Optional end date in the format yyyy-MM-dd. The end date if provided, must be greater than the startDate.'
-      tags:
-        - golf myGolf2u REST
   /is-active:
     get:
       summary: Is Booking and Registration Enabled

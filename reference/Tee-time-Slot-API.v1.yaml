@@ -7,7 +7,7 @@ info:
     email: ashok@britesoftcorp.com
   description: APIs for generating template slots for rule and generation of actuals slots.
 servers:
-  - url: 'http://devlet.mygolf2u.com/rest/tee-time/slot'
+  - url: 'http://devlet.mygolf2u.com/rest/tee-time'
     description: myGolf2u Devlet
 paths:
   /generate-template-slots:
@@ -101,6 +101,38 @@ paths:
           description: 'Optional end date in the format yyyy-MM-dd. The end date if provided, must be greater than the startDate.'
       tags:
         - golf myGolf2u REST
+  /is-active:
+    get:
+      summary: Is Booking and Registration Enabled
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: boolean
+                description: Returns true if feature is enabled. False if not.
+        '409':
+          description: Conflict
+          headers:
+            Error-Code:
+              schema:
+                type: string
+              description: The unique error code. If the club with the given id not found.
+            Error-Message:
+              schema:
+                type: string
+              description: The detailed error message
+      operationId: get-is-active
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: clubId
+          description: ID of the club for which we need to check whether booking and registration feature enabled or not.
+          required: true
+      description: Check whether tee-time booking and registration feature is enabled for a given club or not.
 components:
   schemas:
     Errors:

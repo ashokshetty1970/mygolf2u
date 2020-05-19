@@ -249,3 +249,6 @@ components:
         id:
           type: string
       description: Country Info
+      x-tags:
+        - Models
+        - Common

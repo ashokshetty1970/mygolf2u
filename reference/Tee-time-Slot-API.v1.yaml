@@ -50,6 +50,57 @@ paths:
           in: query
           name: dayName
           description: The name of the day. This is short name which is part of the key in day rule table. This is an optional parameter. If provided the templates are generated only for the given day.
+  /generate-slots:
+    post:
+      summary: ''
+      operationId: post-generate-slots
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: boolean
+                description: 'returns true if slots are generated successfully. If error occurs, request returns CONFLCT status'
+        '409':
+          description: Conflict
+          headers:
+            Error-Code:
+              schema:
+                type: string
+              description: The unique error code which represents a specific error in myGolf2u server. This error code is expanded using resource bundle into Error-Message header
+            Error-Message:
+              schema:
+                type: string
+              description: Details error message representing the Error-Code
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+      description: |-
+        Generate the actual slot for a given course for a date or range of dates. This API assumes following things.
+        1. A valid rule is defined and associated to the course
+        2. The template slots are generated and setup as required.
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: courseId
+          description: The ID of the course for which the slots needs to be generated.
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: startDate
+          required: true
+          description: 'The start date string in the format of yyyy-MM-dd. For example, 2020-05-20'
+        - schema:
+            type: string
+          in: query
+          name: endDate
+          description: 'Optional end date in the format yyyy-MM-dd. The end date if provided, must be greater than the startDate.'
+      tags:
+        - golf myGolf2u REST
 components:
   schemas:
     Errors:
@@ -61,3 +112,6 @@ components:
           description: 'List of all error messages. The main error message will be in the header Error-Message. If any additional error messages are there, then this will contain all the errors.'
           items:
             type: string
+      x-examples:
+        Sample Error Object:
+          errors: []

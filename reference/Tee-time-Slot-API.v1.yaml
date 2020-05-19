@@ -50,6 +50,8 @@ paths:
           in: query
           name: dayName
           description: The name of the day. This is short name which is part of the key in day rule table. This is an optional parameter. If provided the templates are generated only for the given day.
+      tags:
+        - REST APIs
   /generate-slots:
     post:
       summary: Generate Slots
@@ -99,10 +101,13 @@ paths:
           in: query
           name: endDate
           description: 'Optional end date in the format yyyy-MM-dd. The end date if provided, must be greater than the startDate.'
+      tags:
+        - REST APIs
   /is-active:
     get:
       summary: Is Booking and Registration Enabled
-      tags: []
+      tags:
+        - REST APIs
       responses:
         '200':
           description: OK

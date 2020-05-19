@@ -185,3 +185,67 @@ components:
       x-examples:
         Sample Error Object:
           errors: []
+    PlayerData:
+      title: PlayerData
+      type: object
+      x-tags:
+        - Models
+        - Player
+      description: The player data object
+      properties:
+        id:
+          type: integer
+        accountNo:
+          type: string
+        handicapSystemNo:
+          type: string
+        golfAssociationNo:
+          type: string
+        organisation:
+          type: string
+        nickName:
+          type: string
+        playerName:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        passport:
+          type: string
+        email:
+          type: string
+        profile:
+          type: string
+        handicap:
+          type: integer
+        handicapIndex:
+          type: number
+        dateJoined:
+          type: string
+          description: The date in yyyy-MM-dd format
+        dateOfBirth:
+          type: string
+        status:
+          type: string
+        image:
+          type: string
+        type:
+          type: string
+        age:
+          type: integer
+        gender:
+          type: string
+        complete:
+          type: boolean
+        color:
+          type: string
+        deviceToken:
+          type: string
+    CountryData:
+      title: CountryData
+      type: object
+      properties:
+        id:
+          type: string
+      description: Country Info

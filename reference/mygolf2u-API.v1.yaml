@@ -210,7 +210,7 @@ paths:
           type: string
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               type: object
               properties:
@@ -289,7 +289,7 @@ paths:
           type: string
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               type: object
               properties:
@@ -386,7 +386,7 @@ paths:
     get:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_3
+      operationId: searchOrganizerAds_1
       parameters:
       - name: organizerId
         in: query
@@ -527,7 +527,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_5
+      operationId: searchOrganizerAds_2
       parameters:
       - name: organizerId
         in: query
@@ -574,7 +574,7 @@ paths:
     options:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_2
+      operationId: searchOrganizerAds_3
       parameters:
       - name: organizerId
         in: query
@@ -668,7 +668,7 @@ paths:
     patch:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_1
+      operationId: searchOrganizerAds_5
       parameters:
       - name: organizerId
         in: query
@@ -2448,7 +2448,7 @@ paths:
       operationId: updatDeviceInfo
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               $ref: '#/components/schemas/DeviceInfo'
       responses:
@@ -2633,7 +2633,7 @@ paths:
       operationId: uploadAndReadCSV
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               type: object
               properties:
@@ -3391,7 +3391,7 @@ paths:
           format: int32
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               type: object
               properties:
@@ -3472,7 +3472,7 @@ paths:
     get:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_3
+      operationId: recalculateHandicapIndexAfterCompetition_1
       parameters:
       - name: competitionId
         in: query
@@ -3547,7 +3547,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_5
+      operationId: recalculateHandicapIndexAfterCompetition_2
       parameters:
       - name: competitionId
         in: query
@@ -3572,7 +3572,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_2
+      operationId: recalculateHandicapIndexAfterCompetition_3
       parameters:
       - name: competitionId
         in: query
@@ -3622,7 +3622,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_1
+      operationId: recalculateHandicapIndexAfterCompetition_5
       parameters:
       - name: competitionId
         in: query
@@ -3648,7 +3648,7 @@ paths:
     get:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_3
+      operationId: approvePlayerRound_1
       parameters:
       - name: playerRound
         in: query
@@ -3702,7 +3702,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_5
+      operationId: approvePlayerRound_2
       parameters:
       - name: playerRound
         in: query
@@ -3720,7 +3720,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_2
+      operationId: approvePlayerRound_3
       parameters:
       - name: playerRound
         in: query
@@ -3756,7 +3756,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_1
+      operationId: approvePlayerRound_5
       parameters:
       - name: playerRound
         in: query
@@ -4065,6 +4065,62 @@ paths:
             '*/*':
               schema:
                 type: string
+  /rest/organizer/list:
+    get:
+      tags:
+      - organizer-rest-controller
+      operationId: listOrganizers
+      parameters:
+      - name: searchText
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: country
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pageNumber
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 30
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OrganizerList'
+  /rest/organizer/get:
+    get:
+      tags:
+      - organizer-rest-controller
+      operationId: getOrganizerInfo
+      parameters:
+      - name: organizerId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OrganizerInfo'
   /rest/organizer/competitions/active:
     get:
       tags:
@@ -4134,62 +4190,6 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/CompetitionList'
-  /rest/organizer/list:
-    get:
-      tags:
-      - organizer-rest-controller
-      operationId: listOrganizers
-      parameters:
-      - name: searchText
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: country
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: pageNumber
-        in: query
-        required: false
-        schema:
-          type: integer
-          format: int32
-          default: 1
-      - name: pageSize
-        in: query
-        required: false
-        schema:
-          type: integer
-          format: int32
-          default: 30
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/OrganizerList'
-  /rest/organizer/get:
-    get:
-      tags:
-      - organizer-rest-controller
-      operationId: getOrganizerInfo
-      parameters:
-      - name: organizerId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/OrganizerInfo'
   /rest/payment/redirect:
     get:
       tags:
@@ -4215,7 +4215,7 @@ paths:
       operationId: createCollection
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               $ref: '#/components/schemas/PaymentCollectionInfo'
       responses:
@@ -4341,7 +4341,7 @@ paths:
       operationId: createBill
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               $ref: '#/components/schemas/PaymentBillInfo'
       responses:
@@ -4397,7 +4397,7 @@ paths:
       operationId: testCall
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               $ref: '#/components/schemas/PaymentTestInfo'
       responses:
@@ -4659,57 +4659,6 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/Result'
-  /rest/player/handicapindex/get:
-    get:
-      tags:
-      - player-rest-controller
-      operationId: getHandicapIndex
-      parameters:
-      - name: Player-Id
-        in: header
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: useNHS
-        in: query
-        required: false
-        schema:
-          type: boolean
-          default: false
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: number
-                format: double
-  /rest/player/competition-handicap:
-    get:
-      tags:
-      - player-rest-controller
-      operationId: getHandicapIndexForCompetition_1
-      parameters:
-      - name: competitionId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: playerId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: string
   /rest/players/search:
     get:
       tags:
@@ -5549,7 +5498,7 @@ paths:
           format: int32
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               type: object
               properties:
@@ -5793,13 +5742,64 @@ paths:
       operationId: analyzeImportData
       requestBody:
         content:
-          application/json:
+          application/yaml:
             schema:
               type: object
               properties:
                 fileToImport:
                   type: string
                   format: binary
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /rest/player/handicapindex/get:
+    get:
+      tags:
+      - player-rest-controller
+      operationId: getHandicapIndex
+      parameters:
+      - name: Player-Id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: useNHS
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: number
+                format: double
+  /rest/player/competition-handicap:
+    get:
+      tags:
+      - player-rest-controller
+      operationId: getHandicapIndexForCompetition_1
+      parameters:
+      - name: competitionId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: playerId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
       responses:
         "200":
           description: OK
@@ -6771,11 +6771,11 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ClubInfo'
-  /rest/tee-time/activate:
-    post:
+  /rest/tee-time/is-active:
+    get:
       tags:
       - tee-time-booking-rest-controller
-      operationId: enableForClub
+      operationId: isClubOnBoard
       parameters:
       - name: clubId
         in: query
@@ -6790,11 +6790,55 @@ paths:
             '*/*':
               schema:
                 type: boolean
-  /rest/tee-time/is-active:
-    get:
+  /rest/tee-time/pricing-plan/copy:
+    post:
+      tags:
+      - Pricing Plan API
+      summary: Copy Pricing Plan
+      description: |
+        Creates a new pricing plan by copying all the prices from an existing pricing plan.
+        On successful copy, the id of the new pricing plan is returned as response. If the copy fails
+        the error message is in response header "Error-Message"
+      operationId: copyPricingPlan
+      parameters:
+      - name: pricingPlanId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: Copying was successful
+          content:
+            '*/*':
+              schema:
+                type: integer
+                format: int32
+        "409":
+          description: Copying the plan failed. Check Error-Code and Error-Message
+            headers
+          headers:
+            Error-Code:
+              description: The unique error code generated by the server
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: The detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: integer
+                format: int32
+  /rest/tee-time/activate:
+    post:
       tags:
       - tee-time-booking-rest-controller
-      operationId: isClubOnBoard
+      operationId: enableForClub
       parameters:
       - name: clubId
         in: query

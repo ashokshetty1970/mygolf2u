@@ -1,4 +1,12 @@
 openapi: 3.0.1
+info:
+  title: myGolf2u REST API
+  description: |
+    The REST API Documentation for myGolf2u server.
+  contact:
+    name: Ashok Shetty
+    email: ashok@britesoftcorp.com
+  version: "2.2"
 servers:
 - url: http://localhost:1400
   description: Generated server url
@@ -9,6 +17,7 @@ tags:
   description: APIs related to caddies of a club
 - name: Buggy APIs
   description: Club's buggy related APIs
+- name: myGolf2u REST API
 paths:
   /rest/feature/handicap-index-subscription/player:
     get:
@@ -433,7 +442,7 @@ paths:
     put:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_4
+      operationId: searchOrganizerAds_6
       parameters:
       - name: organizerId
         in: query
@@ -480,7 +489,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds
+      operationId: searchOrganizerAds_2
       parameters:
       - name: organizerId
         in: query
@@ -527,7 +536,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_2
+      operationId: searchOrganizerAds_4
       parameters:
       - name: organizerId
         in: query
@@ -574,7 +583,7 @@ paths:
     options:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_3
+      operationId: searchOrganizerAds
       parameters:
       - name: organizerId
         in: query
@@ -621,7 +630,7 @@ paths:
     head:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_6
+      operationId: searchOrganizerAds_5
       parameters:
       - name: organizerId
         in: query
@@ -668,7 +677,7 @@ paths:
     patch:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_5
+      operationId: searchOrganizerAds_3
       parameters:
       - name: organizerId
         in: query
@@ -2546,7 +2555,7 @@ paths:
     get:
       tags:
       - excel-load-rest-controller
-      operationId: loadFlight_1
+      operationId: loadFlight
       parameters:
       - name: fileUrl
         in: query
@@ -2563,7 +2572,7 @@ paths:
     post:
       tags:
       - excel-load-rest-controller
-      operationId: loadFlight
+      operationId: loadFlight_1
       parameters:
       - name: fileUrl
         in: query
@@ -2807,7 +2816,7 @@ paths:
     get:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: finalizeScoring_1
+      operationId: finalizeScoring
       parameters:
       - name: userid
         in: query
@@ -2831,7 +2840,7 @@ paths:
     post:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: finalizeScoring
+      operationId: finalizeScoring_1
       parameters:
       - name: userid
         in: query
@@ -3115,7 +3124,7 @@ paths:
     get:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: createCompetitionScorecard_1
+      operationId: createCompetitionScorecard
       parameters:
       - name: Player-Id
         in: header
@@ -3150,7 +3159,7 @@ paths:
     post:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: createCompetitionScorecard
+      operationId: createCompetitionScorecard_1
       parameters:
       - name: Player-Id
         in: header
@@ -3497,7 +3506,7 @@ paths:
     put:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_4
+      operationId: recalculateHandicapIndexAfterCompetition_6
       parameters:
       - name: competitionId
         in: query
@@ -3522,7 +3531,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition
+      operationId: recalculateHandicapIndexAfterCompetition_2
       parameters:
       - name: competitionId
         in: query
@@ -3547,7 +3556,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_2
+      operationId: recalculateHandicapIndexAfterCompetition_4
       parameters:
       - name: competitionId
         in: query
@@ -3572,7 +3581,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_3
+      operationId: recalculateHandicapIndexAfterCompetition
       parameters:
       - name: competitionId
         in: query
@@ -3597,7 +3606,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_6
+      operationId: recalculateHandicapIndexAfterCompetition_5
       parameters:
       - name: competitionId
         in: query
@@ -3622,7 +3631,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_5
+      operationId: recalculateHandicapIndexAfterCompetition_3
       parameters:
       - name: competitionId
         in: query
@@ -3666,7 +3675,7 @@ paths:
     put:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_4
+      operationId: approvePlayerRound_6
       parameters:
       - name: playerRound
         in: query
@@ -3684,7 +3693,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound
+      operationId: approvePlayerRound_2
       parameters:
       - name: playerRound
         in: query
@@ -3702,7 +3711,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_2
+      operationId: approvePlayerRound_4
       parameters:
       - name: playerRound
         in: query
@@ -3720,7 +3729,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_3
+      operationId: approvePlayerRound
       parameters:
       - name: playerRound
         in: query
@@ -3738,7 +3747,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_6
+      operationId: approvePlayerRound_5
       parameters:
       - name: playerRound
         in: query
@@ -3756,7 +3765,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_5
+      operationId: approvePlayerRound_3
       parameters:
       - name: playerRound
         in: query
@@ -4877,7 +4886,7 @@ paths:
     get:
       tags:
       - player-rest-controller
-      operationId: updatePlayerPhoto_1
+      operationId: updatePlayerPhoto
       parameters:
       - name: filePath
         in: query
@@ -4900,7 +4909,7 @@ paths:
     post:
       tags:
       - player-rest-controller
-      operationId: updatePlayerPhoto
+      operationId: updatePlayerPhoto_1
       parameters:
       - name: filePath
         in: query
@@ -6774,7 +6783,11 @@ paths:
   /rest/tee-time/is-active:
     get:
       tags:
-      - tee-time-booking-rest-controller
+      - Tee-Time Booking API
+      summary: Is Booking and Registration Enabled
+      description: |
+        Checks whether booking and registration feature is enabled for the club or not. Returns true if
+        enabled else returns false.
       operationId: isClubOnBoard
       parameters:
       - name: clubId
@@ -6793,7 +6806,7 @@ paths:
   /rest/tee-time/pricing-plan/copy:
     post:
       tags:
-      - Pricing Plan API
+      - Tee-Time Booking API
       summary: Copy Pricing Plan
       description: |
         Creates a new pricing plan by copying all the prices from an existing pricing plan.
@@ -6834,10 +6847,131 @@ paths:
               schema:
                 type: integer
                 format: int32
+  /rest/tee-time/pricing-plan/delete/{pricingPlanId}:
+    post:
+      tags:
+      - Tee-Time Booking API
+      summary: Delete a Pricing Plan
+      description: |
+        Deletes a given pricing plan. Deleting a pricing plan will be successful only if pricing plan isn't associated
+        to any generation rule. On successful deletion all the associated prices and additional charges are deleted.
+      operationId: deletePricingPlan
+      parameters:
+      - name: pricingPlanId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: Deleted successfully
+          content:
+            '*/*':
+              schema:
+                type: boolean
+        "409":
+          description: Deletion failed due to database constraints.
+          headers:
+            Error-Code:
+              description: The unique error code generated by the server
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: The detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: boolean
+    delete:
+      tags:
+      - Tee-Time Booking API
+      summary: Delete a Pricing Plan
+      description: |
+        Deletes a given pricing plan. Deleting a pricing plan will be successful only if pricing plan isn't associated
+        to any generation rule. On successful deletion all the associated prices and additional charges are deleted.
+      operationId: deletePricingPlan_1
+      parameters:
+      - name: pricingPlanId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: Deleted successfully
+          content:
+            '*/*':
+              schema:
+                type: boolean
+        "409":
+          description: Deletion failed due to database constraints.
+          headers:
+            Error-Code:
+              description: The unique error code generated by the server
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: The detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: boolean
+  /rest/tee-time/booking/list:
+    get:
+      tags:
+      - Tee-Time Booking API
+      summary: List Bookings
+      description: |
+        List all the bookings for a given club for given date. This method returns all bookings or only registered bookings
+        based on the registeredOnly parameter.
+      operationId: listBookings
+      parameters:
+      - name: clubId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: forDate
+        in: query
+        required: true
+        schema:
+          pattern: yyyy-MM-dd
+          type: string
+      - name: registeredOnly
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeeTimeBooking'
   /rest/tee-time/activate:
     post:
       tags:
-      - tee-time-booking-rest-controller
+      - Tee-Time Booking API
+      summary: Enable Booking And Registration Feature
+      description: |2
+            Enable booking and registration features for a given club. This method creates required initial
+            data required for this feature. A sample price plan and slot generation rule are created. <br/>
+            Returns true if the call is successful.
       operationId: enableForClub
       parameters:
       - name: clubId
@@ -6848,15 +6982,33 @@ paths:
           format: int32
       responses:
         "200":
-          description: OK
+          description: Booking and regsitration feature enabled.
           content:
             '*/*':
               schema:
                 type: boolean
-  /rest/tee-time/generate-template-slots:
+        "409":
+          description: Copying the plan failed. Check Error-Code and Error-Message
+            headers
+          headers:
+            Error-Code:
+              description: The unique error code generated by the server
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: The detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: boolean
+  /rest/tee-time/slot/generate-template-slots:
     post:
       tags:
-      - tee-time-slot-rest-controller
+      - Tee-Time Slot API
       operationId: generateTemplateSlots
       parameters:
       - name: ruleId
@@ -6877,10 +7029,10 @@ paths:
             '*/*':
               schema:
                 type: boolean
-  /rest/tee-time/generate-slots:
+  /rest/tee-time/slot/generate-slots:
     post:
       tags:
-      - tee-time-slot-rest-controller
+      - Tee-Time Slot API
       operationId: generateSlots
       parameters:
       - name: courseId
@@ -6914,6 +7066,111 @@ paths:
             '*/*':
               schema:
                 type: boolean
+  /rest/tee-time/slot/generation-rule/list:
+    get:
+      tags:
+      - Tee-Time Slot API
+      summary: List Slot Generation Rules
+      description: |
+        Lists all the slot generation rules for a given club. The "clubId" parameter is mandatory.
+        On successful execution returns the list Slot Rules
+      operationId: listRules
+      parameters:
+      - name: clubId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: Returns the list slot generation rules for the club
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeeTimeSlotGenerationRule'
+  /rest/tee-time/slot/generation-rule/associate:
+    post:
+      tags:
+      - Tee-Time Slot API
+      summary: Associate Slot Generation Rule to a Course
+      description: |
+        Associates a slot generation rule to a course effective from a date. If there is a rule already associated
+        on that date, then that association will be updated with new rule. If association doesn't exist on that
+        date, then this will create a new association. On successful execution returns true.
+      operationId: setCourseRule
+      parameters:
+      - name: courseId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: ruleId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: effectiveFrom
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: secondNine
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: Associated the rule successfully. Returns true
+          content:
+            '*/*':
+              schema:
+                type: boolean
+        "409":
+          description: Associating rule failed.
+          headers:
+            Error-Code:
+              description: The unique error code generated
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: Detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: boolean
+  /rest/tee-time/slot/generation-rule/get/{ruleId}:
+    get:
+      tags:
+      - Tee-Time Slot API
+      summary: Get a Slot Generation Rule
+      description: Reads the rule with given id. The
+      operationId: readSlotGenerationRule
+      parameters:
+      - name: ruleId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/TeeTimeSlotGenerationRule'
 components:
   schemas:
     FeatureSubscription:
@@ -9587,3 +9844,468 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ClubInfo'
+    TeeTimeBooking:
+      type: object
+    AddressData:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        postCode:
+          type: string
+        state:
+          type: string
+        countryData:
+          $ref: '#/components/schemas/CountryData'
+        phone1:
+          type: string
+        phone2:
+          type: string
+        fax:
+          type: string
+        webSite:
+          type: string
+    AdvertisementData:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        company:
+          type: string
+        active:
+          type: boolean
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        displayPeriod:
+          type: integer
+          format: int32
+        rank:
+          type: integer
+          format: int32
+        externalUrl:
+          type: string
+        image:
+          type: string
+        useIn:
+          type: string
+        updateCounter:
+          type: integer
+          format: int32
+    BookingPlayerType:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        nationalitySpecific:
+          type: boolean
+    ClubCourseData:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        type:
+          type: integer
+          format: int32
+        par:
+          type: integer
+          format: int32
+        rating:
+          type: number
+        slope:
+          type: integer
+          format: int32
+        description:
+          type: string
+        courseImage:
+          type: string
+        shortCode:
+          type: string
+        displayOrder:
+          type: integer
+          format: int32
+        holes:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/ClubCourseHoleData'
+        teeBoxes:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeBoxData'
+    ClubCourseHoleData:
+      required:
+      - holeNo
+      - par
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        holeNo:
+          type: integer
+          format: int32
+        par:
+          type: integer
+          format: int32
+        indexOut:
+          type: integer
+          format: int32
+        indexIn:
+          type: integer
+          format: int32
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+        description:
+          type: string
+        distanceBlack:
+          type: integer
+          format: int32
+        distanceBlue:
+          type: integer
+          format: int32
+        distanceRed:
+          type: integer
+          format: int32
+        distanceWhite:
+          type: integer
+          format: int32
+        image:
+          type: string
+    ClubData:
+      required:
+      - courses
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        registerNo:
+          type: string
+        tag:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressData'
+        contactPerson:
+          type: string
+        contactEmail:
+          type: string
+        clubImage:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+        virtualClub:
+          type: boolean
+        timeZone:
+          $ref: '#/components/schemas/TimeZoneData'
+        courses:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/ClubCourseData'
+        organizer:
+          $ref: '#/components/schemas/OrganizerData'
+    CurrencyData:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+    OrganizerAdData:
+      type: object
+      properties:
+        advertisement:
+          $ref: '#/components/schemas/AdvertisementData'
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        displayPeriod:
+          type: integer
+          format: int32
+        rank:
+          type: integer
+          format: int32
+        autoInclude:
+          type: boolean
+    OrganizerData:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        registerNo:
+          type: string
+        name:
+          type: string
+        shortName:
+          type: string
+        description:
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressData'
+        image:
+          type: string
+        contactPerson:
+          type: string
+        contactEmail:
+          type: string
+        status:
+          type: string
+        dateJoined:
+          type: string
+          format: date-time
+        createdOn:
+          type: string
+          format: date-time
+        createdBy:
+          type: string
+        club:
+          $ref: '#/components/schemas/ClubData'
+        advertisements:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizerAdData'
+    TeeTimePrice:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        playerType:
+          $ref: '#/components/schemas/BookingPlayerType'
+        priceComponent:
+          $ref: '#/components/schemas/TeeTimePriceComponent'
+        applicableTo:
+          type: string
+          enum:
+          - Booking
+          - Player
+        mandatory:
+          type: boolean
+        price18Hole:
+          type: number
+        price9Hole:
+          type: number
+        addToDisplayPrice:
+          type: boolean
+    TeeTimePriceComponent:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        systemSeeded:
+          type: boolean
+        printSequence:
+          type: integer
+          format: int32
+        defaultComponent:
+          type: boolean
+        componentType:
+          type: string
+          enum:
+          - Green
+          - Caddy
+          - Buggy
+          - CaddyBooking
+          - Other
+    TeeTimePricingAdditionalCharge:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        amountType:
+          type: string
+          enum:
+          - Absolute
+          - Percentage
+        amount:
+          type: number
+        applicableComponents:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeTimePriceComponent'
+    TeeTimePricingPlan:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        description:
+          type: string
+        currency:
+          $ref: '#/components/schemas/CurrencyData'
+        promotional:
+          type: boolean
+        prices:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeTimePrice'
+        additionalCharges:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeTimePricingAdditionalCharge'
+    TeeTimeSlotGenerationRule:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        club:
+          $ref: '#/components/schemas/ClubData'
+        daysInAdvanceToGenerate:
+          type: integer
+          format: int32
+        daysInAdvanceForBooking:
+          type: integer
+          format: int32
+        dayRules:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeTimeSlotGenerationRuleDay'
+    TeeTimeSlotGenerationRuleDay:
+      type: object
+      properties:
+        dayName:
+          type: string
+        name:
+          type: string
+        holiday:
+          type: boolean
+        bookingDisabled:
+          type: boolean
+        firstSlotStartTime:
+          $ref: '#/components/schemas/LocalTime'
+        minutesBetweenSlots:
+          type: integer
+          format: int32
+        totalSlots:
+          type: integer
+          format: int32
+        maxPlayersPerSlot:
+          type: integer
+          format: int32
+        minPlayersPerSlot:
+          type: integer
+          format: int32
+        waitingListSize:
+          type: integer
+          format: int32
+        allowWalking:
+          type: boolean
+        pricingPlan:
+          $ref: '#/components/schemas/TeeTimePricingPlan'
+        pricingPlanPromotional:
+          $ref: '#/components/schemas/TeeTimePricingPlan'
+        specialDay:
+          $ref: '#/components/schemas/TeeTimeSpecialDay'
+        slotTemplates:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeTimeSlotTemplate'
+    TeeTimeSlotTemplate:
+      type: object
+      properties:
+        slotNo:
+          type: integer
+          format: int32
+        teeOffTime:
+          $ref: '#/components/schemas/LocalTime'
+        minPlayers:
+          type: integer
+          format: int32
+        maxPlayers:
+          type: integer
+          format: int32
+        waitingListSize:
+          type: integer
+          format: int32
+        availableForBooking:
+          type: boolean
+        reasonForBlocking:
+          type: string
+        pricingPlan:
+          $ref: '#/components/schemas/TeeTimePricingPlan'
+        pricingPlanPromotional:
+          $ref: '#/components/schemas/TeeTimePricingPlan'
+    TeeTimeSpecialDate:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        specialDate:
+          type: string
+          format: date
+        recurring:
+          type: boolean
+    TeeTimeSpecialDay:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        club:
+          $ref: '#/components/schemas/ClubData'
+        specialDates:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeTimeSpecialDate'

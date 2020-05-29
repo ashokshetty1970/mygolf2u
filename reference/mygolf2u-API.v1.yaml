@@ -11,6 +11,8 @@ servers:
 - url: http://localhost:1400
   description: Generated server url
 tags:
+- name: Tee-Time Booking API
+  description: This implements the APIs required tee-time booking.
 - name: Club API
   description: Club related APIs
 - name: Club Caddie API
@@ -316,7 +318,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: deleteAd_1
+      operationId: deleteAd
       parameters:
       - name: adId
         in: query
@@ -334,7 +336,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: deleteAd
+      operationId: deleteAd_1
       parameters:
       - name: adId
         in: query
@@ -395,7 +397,7 @@ paths:
     get:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_1
+      operationId: searchOrganizerAds_3
       parameters:
       - name: organizerId
         in: query
@@ -442,7 +444,7 @@ paths:
     put:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_4
+      operationId: searchOrganizerAds
       parameters:
       - name: organizerId
         in: query
@@ -489,7 +491,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_2
+      operationId: searchOrganizerAds_1
       parameters:
       - name: organizerId
         in: query
@@ -536,7 +538,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_3
+      operationId: searchOrganizerAds_4
       parameters:
       - name: organizerId
         in: query
@@ -630,7 +632,7 @@ paths:
     head:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds
+      operationId: searchOrganizerAds_5
       parameters:
       - name: organizerId
         in: query
@@ -677,7 +679,7 @@ paths:
     patch:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_5
+      operationId: searchOrganizerAds_2
       parameters:
       - name: organizerId
         in: query
@@ -971,92 +973,6 @@ paths:
                 oneOf:
                 - type: string
                 - $ref: '#/components/schemas/AuthenticationResult'
-  /rest/register/player:
-    post:
-      tags:
-      - authentication-rest-controller
-      operationId: registerPlayer
-      parameters:
-      - name: firstName
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: lastName
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: gender
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: handicap
-        in: query
-        required: false
-        schema:
-          type: integer
-          format: int32
-      - name: handicapIndex
-        in: query
-        required: false
-        schema:
-          type: number
-          format: double
-      - name: phone
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: teeoff
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: email
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: password
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: nhsNumber
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: token
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: country
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: nationality
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: Player-Id
-        in: header
-        required: false
-        schema:
-          type: integer
-          format: int32
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/PlayerInfo'
   /rest/resetpassword:
     post:
       tags:
@@ -1249,6 +1165,92 @@ paths:
             '*/*':
               schema:
                 type: boolean
+  /rest/register/player:
+    post:
+      tags:
+      - authentication-rest-controller
+      operationId: registerPlayer
+      parameters:
+      - name: firstName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: lastName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: gender
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: handicap
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: handicapIndex
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: phone
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: teeoff
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: password
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: nhsNumber
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: token
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: country
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: nationality
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: Player-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PlayerInfo'
   /rest/competition/players/register:
     post:
       tags:
@@ -1340,39 +1342,6 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/CompetitionList'
-  /rest/competition/flights/list:
-    get:
-      tags:
-      - competition-rest-controller
-      operationId: getFlights
-      parameters:
-      - name: competitionId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: roundNo
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: Player-Id
-        in: header
-        required: false
-        schema:
-          type: integer
-          format: int32
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/FlightInfo'
   /rest/competition/active/list:
     get:
       tags:
@@ -1992,6 +1961,39 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/PlayerScoreInfo'
+  /rest/competition/flights/list:
+    get:
+      tags:
+      - competition-rest-controller
+      operationId: getFlights
+      parameters:
+      - name: competitionId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: roundNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: Player-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FlightInfo'
   /rest/device/logout:
     post:
       tags:
@@ -2526,6 +2528,41 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DeviceAssignment'
+  /rest/excel-load/load-flights:
+    get:
+      tags:
+      - excel-load-rest-controller
+      operationId: loadFlight_1
+      parameters:
+      - name: fileUrl
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+    post:
+      tags:
+      - excel-load-rest-controller
+      operationId: loadFlight
+      parameters:
+      - name: fileUrl
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
   /rest/excel-load/generate-flight-template:
     get:
       tags:
@@ -2544,41 +2581,6 @@ paths:
         schema:
           type: integer
           format: int32
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: string
-  /rest/excel-load/load-flights:
-    get:
-      tags:
-      - excel-load-rest-controller
-      operationId: loadFlight
-      parameters:
-      - name: fileUrl
-        in: query
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: string
-    post:
-      tags:
-      - excel-load-rest-controller
-      operationId: loadFlight_1
-      parameters:
-      - name: fileUrl
-        in: query
-        required: true
-        schema:
-          type: string
       responses:
         "200":
           description: OK
@@ -2816,7 +2818,7 @@ paths:
     get:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: finalizeScoring
+      operationId: finalizeScoring_1
       parameters:
       - name: userid
         in: query
@@ -2840,7 +2842,7 @@ paths:
     post:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: finalizeScoring_1
+      operationId: finalizeScoring
       parameters:
       - name: userid
         in: query
@@ -3124,7 +3126,7 @@ paths:
     get:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: createCompetitionScorecard
+      operationId: createCompetitionScorecard_1
       parameters:
       - name: Player-Id
         in: header
@@ -3159,7 +3161,7 @@ paths:
     post:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: createCompetitionScorecard_1
+      operationId: createCompetitionScorecard
       parameters:
       - name: Player-Id
         in: header
@@ -3481,7 +3483,7 @@ paths:
     get:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_1
+      operationId: recalculateHandicapIndexAfterCompetition_3
       parameters:
       - name: competitionId
         in: query
@@ -3506,7 +3508,7 @@ paths:
     put:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_4
+      operationId: recalculateHandicapIndexAfterCompetition
       parameters:
       - name: competitionId
         in: query
@@ -3531,7 +3533,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_2
+      operationId: recalculateHandicapIndexAfterCompetition_1
       parameters:
       - name: competitionId
         in: query
@@ -3556,7 +3558,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_3
+      operationId: recalculateHandicapIndexAfterCompetition_4
       parameters:
       - name: competitionId
         in: query
@@ -3606,7 +3608,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition
+      operationId: recalculateHandicapIndexAfterCompetition_5
       parameters:
       - name: competitionId
         in: query
@@ -3631,7 +3633,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_5
+      operationId: recalculateHandicapIndexAfterCompetition_2
       parameters:
       - name: competitionId
         in: query
@@ -3657,7 +3659,7 @@ paths:
     get:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_1
+      operationId: approvePlayerRound_3
       parameters:
       - name: playerRound
         in: query
@@ -3675,7 +3677,7 @@ paths:
     put:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_4
+      operationId: approvePlayerRound
       parameters:
       - name: playerRound
         in: query
@@ -3693,7 +3695,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_2
+      operationId: approvePlayerRound_1
       parameters:
       - name: playerRound
         in: query
@@ -3711,7 +3713,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_3
+      operationId: approvePlayerRound_4
       parameters:
       - name: playerRound
         in: query
@@ -3747,7 +3749,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound
+      operationId: approvePlayerRound_5
       parameters:
       - name: playerRound
         in: query
@@ -3765,7 +3767,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_5
+      operationId: approvePlayerRound_2
       parameters:
       - name: playerRound
         in: query
@@ -4668,32 +4670,6 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/Result'
-  /rest/player/handicapindex/get:
-    get:
-      tags:
-      - player-rest-controller
-      operationId: getHandicapIndex
-      parameters:
-      - name: Player-Id
-        in: header
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: useNHS
-        in: query
-        required: false
-        schema:
-          type: boolean
-          default: false
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: number
-                format: double
   /rest/player/competition-handicap:
     get:
       tags:
@@ -4937,7 +4913,7 @@ paths:
     get:
       tags:
       - player-rest-controller
-      operationId: updatePlayerPhoto
+      operationId: updatePlayerPhoto_1
       parameters:
       - name: filePath
         in: query
@@ -4960,7 +4936,7 @@ paths:
     post:
       tags:
       - player-rest-controller
-      operationId: updatePlayerPhoto_1
+      operationId: updatePlayerPhoto
       parameters:
       - name: filePath
         in: query
@@ -5816,6 +5792,32 @@ paths:
             '*/*':
               schema:
                 type: string
+  /rest/player/handicapindex/get:
+    get:
+      tags:
+      - player-rest-controller
+      operationId: getHandicapIndex
+      parameters:
+      - name: Player-Id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: useNHS
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: number
+                format: double
   /rest/pushnotification/serverinfo:
     get:
       tags:
@@ -6780,48 +6782,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ClubInfo'
-  /rest/tee-time/activate:
-    post:
-      tags:
-      - Tee-Time Booking API
-      summary: Enable Booking And Registration Feature
-      description: |2
-            Enable booking and registration features for a given club. This method creates required initial
-            data required for this feature. A sample price plan and slot generation rule are created. <br/>
-            Returns true if the call is successful.
-      operationId: enableForClub
-      parameters:
-      - name: clubId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      responses:
-        "200":
-          description: Booking and regsitration feature enabled.
-          content:
-            '*/*':
-              schema:
-                type: boolean
-        "409":
-          description: Copying the plan failed. Check Error-Code and Error-Message
-            headers
-          headers:
-            Error-Code:
-              description: The unique error code generated by the server
-              style: simple
-              schema:
-                type: string
-            Error-Message:
-              description: The detailed error message.
-              style: simple
-              schema:
-                type: string
-          content:
-            '*/*':
-              schema:
-                type: boolean
   /rest/tee-time/is-active:
     get:
       tags:
@@ -7047,7 +7007,7 @@ paths:
       summary: Delete Player From Booking
       description: |
         Deletes a player from the booking. You have to pass the bookingPlayerId to delete the player.
-      operationId: deleteBookingPlayer_1
+      operationId: deleteBookingPlayer
       parameters:
       - name: bookingPlayerId
         in: query
@@ -7086,7 +7046,7 @@ paths:
       summary: Delete Player From Booking
       description: |
         Deletes a player from the booking. You have to pass the bookingPlayerId to delete the player.
-      operationId: deleteBookingPlayer
+      operationId: deleteBookingPlayer_1
       parameters:
       - name: bookingPlayerId
         in: query
@@ -7156,6 +7116,105 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TeeTimeBooking'
+  /rest/tee-time/booking/created-by-player:
+    get:
+      tags:
+      - Tee-Time Booking API
+      summary: Booking By Player
+      description: |
+        List all the bookings created by a player where tee-off dates are greater or equal to a certain date.
+        The player may or may not playing.
+      operationId: bookingsByPlayer
+      parameters:
+      - name: playerId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: fromDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: maxBookings
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 30
+      responses:
+        "200":
+          description: Returns the list of bookings
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeeTimeBooking'
+        "409":
+          description: Deletion failed due to database constraints.
+          headers:
+            Error-Code:
+              description: The unique error code generated by the server
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: The detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeeTimeBooking'
+  /rest/tee-time/activate:
+    post:
+      tags:
+      - Tee-Time Booking API
+      summary: Enable Booking And Registration Feature
+      description: |2
+            Enable booking and registration features for a given club. This method creates required initial
+            data required for this feature. A sample price plan and slot generation rule are created. <br/>
+            Returns true if the call is successful.
+      operationId: enableForClub
+      parameters:
+      - name: clubId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: Booking and regsitration feature enabled.
+          content:
+            '*/*':
+              schema:
+                type: boolean
+        "409":
+          description: Copying the plan failed. Check Error-Code and Error-Message
+            headers
+          headers:
+            Error-Code:
+              description: The unique error code generated by the server
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: The detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: boolean
   /rest/tee-time/slot/generate-template-slots:
     post:
       tags:
@@ -7271,6 +7330,49 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TeeTimeSlotGenerationRule'
+  /rest/tee-time/slot/generation-rule/copy:
+    post:
+      tags:
+      - Tee-Time Slot API
+      summary: Copy Slot Generation Rule
+      description: |
+        Copies an existing slot generation rule into a new rule. The rule copies all the days in the
+        existing rule into new rule. However, slot templates aren't copied. The name of the new rule
+        will be prefixed with *Copy Of*
+      operationId: copyRule
+      parameters:
+      - name: ruleId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: Copying Successful
+          content:
+            '*/*':
+              schema:
+                type: integer
+                format: int32
+        "409":
+          description: Deletion failed due to database constraints.
+          headers:
+            Error-Code:
+              description: The unique error code generated
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: Detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: integer
+                format: int32
   /rest/tee-time/slot/list:
     get:
       tags:
@@ -7918,85 +8020,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CompetitionInfo'
-    FlightInfo:
-      type: object
-      properties:
-        flightNumber:
-          type: string
-        startTime:
-          $ref: '#/components/schemas/LocalTime'
-        startHole:
-          type: integer
-          format: int32
-        groupName:
-          type: string
-        playerFlight:
-          type: boolean
-        flightMembers:
-          type: array
-          items:
-            $ref: '#/components/schemas/FlightMember'
-    FlightMember:
-      type: object
-      properties:
-        playerId:
-          type: integer
-          format: int32
-        playerName:
-          type: string
-        photoUrl:
-          type: string
-        handicap:
-          type: integer
-          format: int32
-        buggy:
-          type: string
-        status:
-          type: string
-          enum:
-          - Pending
-          - InProgess
-          - Completed
-          - Withdrawn
-        scorer:
-          type: boolean
-        playerCount:
-          type: integer
-          format: int32
-        scoringPlayerId:
-          type: integer
-          format: int32
-        scoringPlayerName:
-          type: string
-        teeBox:
-          $ref: '#/components/schemas/TeeBoxData'
-    LocalTime:
-      type: object
-      properties:
-        hour:
-          type: integer
-          format: int32
-        minute:
-          type: integer
-          format: int32
-        second:
-          type: integer
-          format: int32
-        nano:
-          type: integer
-          format: int32
-    TeeBoxData:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        name:
-          type: string
-        image:
-          type: string
-        description:
-          type: string
     TeamInfo:
       type: object
       properties:
@@ -8100,6 +8123,18 @@ components:
         nationalFlag:
           type: string
         nationalSportCode:
+          type: string
+    TeeBoxData:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        image:
+          type: string
+        description:
           type: string
     LeaderBoard:
       type: object
@@ -8211,6 +8246,21 @@ components:
           type: string
         lastName:
           type: string
+    LocalTime:
+      type: object
+      properties:
+        hour:
+          type: integer
+          format: int32
+        minute:
+          type: integer
+          format: int32
+        second:
+          type: integer
+          format: int32
+        nano:
+          type: integer
+          format: int32
     HoleScore:
       type: object
       properties:
@@ -8524,6 +8574,58 @@ components:
           type: string
         teamPos:
           type: string
+    FlightInfo:
+      type: object
+      properties:
+        flightNumber:
+          type: string
+        startTime:
+          $ref: '#/components/schemas/LocalTime'
+        startHole:
+          type: integer
+          format: int32
+        groupName:
+          type: string
+        playerFlight:
+          type: boolean
+        flightMembers:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightMember'
+    FlightMember:
+      type: object
+      properties:
+        playerId:
+          type: integer
+          format: int32
+        playerName:
+          type: string
+        photoUrl:
+          type: string
+        handicap:
+          type: integer
+          format: int32
+        buggy:
+          type: string
+        status:
+          type: string
+          enum:
+          - Pending
+          - InProgess
+          - Completed
+          - Withdrawn
+        scorer:
+          type: boolean
+        playerCount:
+          type: integer
+          format: int32
+        scoringPlayerId:
+          type: integer
+          format: int32
+        scoringPlayerName:
+          type: string
+        teeBox:
+          $ref: '#/components/schemas/TeeBoxData'
     CompetitionCategory:
       type: object
       properties:
@@ -10185,6 +10287,9 @@ components:
           type: string
         bookingPhone:
           type: string
+        bookingRequestedAt:
+          type: string
+          format: date-time
       description: All the parameters for a new booking
     AddressData:
       type: object
@@ -10605,6 +10710,12 @@ components:
           type: string
         bookingPersonPhone:
           type: string
+        bookingRequestedAt:
+          type: string
+          format: date-time
+        bookingCreatedAt:
+          type: string
+          format: date-time
         flight:
           $ref: '#/components/schemas/TeeTimeFlight'
         buggiesAssigned:
@@ -10721,6 +10832,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TeeTimePriceComponent'
+        applicablePlayerTypes:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/BookingPlayerType'
     TeeTimePricingPlan:
       type: object
       properties:
@@ -10774,6 +10890,10 @@ components:
         reasonForBlocking:
           type: string
         allowWalking:
+          type: boolean
+        nineHolesAllowed:
+          type: boolean
+        eighteenHolesAllowed:
           type: boolean
         pricingPlan:
           $ref: '#/components/schemas/TeeTimePricingPlan'
@@ -10869,6 +10989,14 @@ components:
           $ref: '#/components/schemas/TeeTimePricingPlan'
         pricingPlanPromotional:
           $ref: '#/components/schemas/TeeTimePricingPlan'
+        allowWalking:
+          type: boolean
+        deleted:
+          type: boolean
+        nineHolesAllowed:
+          type: boolean
+        eighteenHolesAllowed:
+          type: boolean
     TeeTimeSpecialDate:
       type: object
       properties:

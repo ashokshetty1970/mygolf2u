@@ -17,8 +17,6 @@ tags:
   description: Club related APIs
 - name: Club Caddie API
   description: APIs related to caddies of a club
-- name: Buggy APIs
-  description: Club's buggy related APIs
 - name: myGolf2u REST API
 paths:
   /rest/feature/handicap-index-subscription/player:
@@ -318,7 +316,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: deleteAd_1
+      operationId: deleteAd
       parameters:
       - name: adId
         in: query
@@ -336,7 +334,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: deleteAd
+      operationId: deleteAd_1
       parameters:
       - name: adId
         in: query
@@ -444,7 +442,7 @@ paths:
     put:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_4
+      operationId: searchOrganizerAds_5
       parameters:
       - name: organizerId
         in: query
@@ -491,7 +489,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_6
+      operationId: searchOrganizerAds_1
       parameters:
       - name: organizerId
         in: query
@@ -538,7 +536,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_2
+      operationId: searchOrganizerAds_4
       parameters:
       - name: organizerId
         in: query
@@ -585,7 +583,7 @@ paths:
     options:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_5
+      operationId: searchOrganizerAds
       parameters:
       - name: organizerId
         in: query
@@ -632,7 +630,7 @@ paths:
     head:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds
+      operationId: searchOrganizerAds_6
       parameters:
       - name: organizerId
         in: query
@@ -679,7 +677,7 @@ paths:
     patch:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_1
+      operationId: searchOrganizerAds_2
       parameters:
       - name: organizerId
         in: query
@@ -870,7 +868,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: deleteCompetitionAd_1
+      operationId: deleteCompetitionAd
       parameters:
       - name: competitionId
         in: query
@@ -894,7 +892,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: deleteCompetitionAd
+      operationId: deleteCompetitionAd_1
       parameters:
       - name: competitionId
         in: query
@@ -2557,7 +2555,7 @@ paths:
     get:
       tags:
       - excel-load-rest-controller
-      operationId: loadFlight
+      operationId: loadFlight_1
       parameters:
       - name: fileUrl
         in: query
@@ -2574,7 +2572,7 @@ paths:
     post:
       tags:
       - excel-load-rest-controller
-      operationId: loadFlight_1
+      operationId: loadFlight
       parameters:
       - name: fileUrl
         in: query
@@ -2818,7 +2816,7 @@ paths:
     get:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: finalizeScoring
+      operationId: finalizeScoring_1
       parameters:
       - name: userid
         in: query
@@ -2842,7 +2840,7 @@ paths:
     post:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: finalizeScoring_1
+      operationId: finalizeScoring
       parameters:
       - name: userid
         in: query
@@ -3126,7 +3124,7 @@ paths:
     get:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: createCompetitionScorecard
+      operationId: createCompetitionScorecard_1
       parameters:
       - name: Player-Id
         in: header
@@ -3161,7 +3159,7 @@ paths:
     post:
       tags:
       - game-and-scorecard-rest-controller
-      operationId: createCompetitionScorecard_1
+      operationId: createCompetitionScorecard
       parameters:
       - name: Player-Id
         in: header
@@ -3508,7 +3506,7 @@ paths:
     put:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_4
+      operationId: recalculateHandicapIndexAfterCompetition_5
       parameters:
       - name: competitionId
         in: query
@@ -3533,7 +3531,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_6
+      operationId: recalculateHandicapIndexAfterCompetition_1
       parameters:
       - name: competitionId
         in: query
@@ -3558,7 +3556,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_2
+      operationId: recalculateHandicapIndexAfterCompetition_4
       parameters:
       - name: competitionId
         in: query
@@ -3583,7 +3581,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_5
+      operationId: recalculateHandicapIndexAfterCompetition
       parameters:
       - name: competitionId
         in: query
@@ -3608,7 +3606,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition
+      operationId: recalculateHandicapIndexAfterCompetition_6
       parameters:
       - name: competitionId
         in: query
@@ -3633,7 +3631,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_1
+      operationId: recalculateHandicapIndexAfterCompetition_2
       parameters:
       - name: competitionId
         in: query
@@ -3677,7 +3675,7 @@ paths:
     put:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_4
+      operationId: approvePlayerRound_5
       parameters:
       - name: playerRound
         in: query
@@ -3695,7 +3693,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_6
+      operationId: approvePlayerRound_1
       parameters:
       - name: playerRound
         in: query
@@ -3713,7 +3711,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_2
+      operationId: approvePlayerRound_4
       parameters:
       - name: playerRound
         in: query
@@ -3731,7 +3729,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_5
+      operationId: approvePlayerRound
       parameters:
       - name: playerRound
         in: query
@@ -3749,7 +3747,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound
+      operationId: approvePlayerRound_6
       parameters:
       - name: playerRound
         in: query
@@ -3767,7 +3765,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_1
+      operationId: approvePlayerRound_2
       parameters:
       - name: playerRound
         in: query
@@ -4939,7 +4937,7 @@ paths:
     get:
       tags:
       - player-rest-controller
-      operationId: updatePlayerPhoto
+      operationId: updatePlayerPhoto_1
       parameters:
       - name: filePath
         in: query
@@ -4962,7 +4960,7 @@ paths:
     post:
       tags:
       - player-rest-controller
-      operationId: updatePlayerPhoto_1
+      operationId: updatePlayerPhoto
       parameters:
       - name: filePath
         in: query
@@ -6425,7 +6423,8 @@ paths:
   /rest/club/buggy/list-buggies:
     get:
       tags:
-      - Buggy APIs
+      - Buggy API
+      - Club API
       summary: List Buggies Of a club
       description: List all the buggies of a club. This list include even inactive
         buggies as well as unavailable buggies
@@ -6450,7 +6449,8 @@ paths:
   /rest/club/buggy/list-available-buggies:
     get:
       tags:
-      - Buggy APIs
+      - Buggy API
+      - Club API
       summary: List all the available buggies Of a club
       description: |
         List all the available list of buggies on a given date. This method will check buggy unavailability and
@@ -6492,7 +6492,8 @@ paths:
   /rest/club/buggy/schedule:
     get:
       tags:
-      - Buggy APIs
+      - Buggy API
+      - Club API
       summary: Buggy Schedule
       description: |
         Get availability schedule for a buggy between given two dates. The schedule defines whether
@@ -6500,7 +6501,7 @@ paths:
         optional. If not specified, one month schedule from the given 'fromDate' is returned.
       operationId: getBuggySchedule
       parameters:
-      - name: caddyId
+      - name: buggyId
         in: query
         required: true
         schema:
@@ -6653,7 +6654,7 @@ paths:
   /rest/club/competitions/active:
     get:
       tags:
-      - club-course-rest-controller
+      - Club API
       operationId: getActiveCompetitions_2
       parameters:
       - name: clubId
@@ -6674,7 +6675,7 @@ paths:
   /rest/club/competitions/search:
     get:
       tags:
-      - club-course-rest-controller
+      - Club API
       operationId: getCompetitions_1
       parameters:
       - name: clubId
@@ -6719,31 +6720,6 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/CompetitionList'
-  /rest/club/get:
-    get:
-      tags:
-      - Club API
-      operationId: getClubInfo
-      parameters:
-      - name: clubId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: fullDetails
-        in: query
-        required: false
-        schema:
-          type: boolean
-          default: true
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ClubInfo'
   /rest/clubs/search:
     get:
       tags:
@@ -6793,6 +6769,31 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/ClubList'
+  /rest/club/get:
+    get:
+      tags:
+      - Club API
+      operationId: getClubInfo
+      parameters:
+      - name: clubId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: fullDetails
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ClubInfo'
   /rest/club/courses:
     get:
       tags:
@@ -6876,6 +6877,27 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ClubInfo'
+  /rest/tee-time/booking/book-a-slot:
+    post:
+      tags:
+      - Tee-Time Booking API
+      summary: Book A Slot
+      description: |
+        Books a tee-time slot in given club. The 'auth' parameter is automatically injected by the framework from
+        current authentication. The member attribute of bookingRequest are specified as separate request parameters.
+      operationId: bookASlot
+      requestBody:
+        content:
+          application/yaml:
+            schema:
+              $ref: '#/components/schemas/New Booking'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
   /rest/tee-time/activate:
     post:
       tags:
@@ -6993,7 +7015,7 @@ paths:
       description: |
         Deletes a given pricing plan. Deleting a pricing plan will be successful only if pricing plan isn't associated
         to any generation rule. On successful deletion all the associated prices and additional charges are deleted.
-      operationId: deletePricingPlan_1
+      operationId: deletePricingPlan
       parameters:
       - name: pricingPlanId
         in: path
@@ -7032,7 +7054,7 @@ paths:
       description: |
         Deletes a given pricing plan. Deleting a pricing plan will be successful only if pricing plan isn't associated
         to any generation rule. On successful deletion all the associated prices and additional charges are deleted.
-      operationId: deletePricingPlan
+      operationId: deletePricingPlan_1
       parameters:
       - name: pricingPlanId
         in: path
@@ -7064,27 +7086,6 @@ paths:
             '*/*':
               schema:
                 type: boolean
-  /rest/tee-time/booking/book-a-slot:
-    post:
-      tags:
-      - Tee-Time Booking API
-      summary: Book A Slot
-      description: |
-        Books a tee-time slot in given club. The 'auth' parameter is automatically injected by the framework from
-        current authentication. The member attribute of bookingRequest are specified as separate request parameters.
-      operationId: bookASlot
-      requestBody:
-        content:
-          application/yaml:
-            schema:
-              $ref: '#/components/schemas/New Booking'
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: string
   /rest/tee-time/booking/add-a-player:
     post:
       tags:
@@ -7143,7 +7144,7 @@ paths:
       summary: Delete Player From Booking
       description: |
         Deletes a player from the booking. You have to pass the bookingPlayerId to delete the player.
-      operationId: deleteBookingPlayer_1
+      operationId: deleteBookingPlayer
       parameters:
       - name: bookingPlayerId
         in: query
@@ -7182,7 +7183,7 @@ paths:
       summary: Delete Player From Booking
       description: |
         Deletes a player from the booking. You have to pass the bookingPlayerId to delete the player.
-      operationId: deleteBookingPlayer
+      operationId: deleteBookingPlayer_1
       parameters:
       - name: bookingPlayerId
         in: query
@@ -7309,30 +7310,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TeeTimeBooking'
-  /rest/tee-time/slot/generate-template-slots:
-    post:
-      tags:
-      - Tee-Time Slot API
-      operationId: generateTemplateSlots
-      parameters:
-      - name: ruleId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: dayName
-        in: query
-        required: false
-        schema:
-          type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: boolean
   /rest/tee-time/slot/generate-slots:
     post:
       tags:
@@ -7376,6 +7353,30 @@ paths:
                 type: boolean
         default:
           description: default response
+          content:
+            '*/*':
+              schema:
+                type: boolean
+  /rest/tee-time/slot/generate-template-slots:
+    post:
+      tags:
+      - Tee-Time Slot API
+      operationId: generateTemplateSlots
+      parameters:
+      - name: ruleId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: dayName
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
           content:
             '*/*':
               schema:
@@ -7496,6 +7497,16 @@ paths:
         schema:
           type: string
           format: date
+      - name: fromTime
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/LocalTime'
+      - name: toTime
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/LocalTime'
       responses:
         "200":
           description: Returns list of slot with prices
@@ -7524,6 +7535,57 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TeeTimeSlotDisplay'
+  /rest/tee-time/slot/generation-rule/is-valid/{ruleId}:
+    get:
+      tags:
+      - Tee-Time Slot API
+      summary: Check Slot Generation Rule Validity
+      description: |
+        Checks whether the slot generation rule is valid or not. This API checks following aspects
+        1. Whether the rule has minimum of 7 Week Days defined.
+        2. Each day has at least one template slot (if it is not holiday)
+        3. If checkAssociation is true, then validation checks whether it is associated to at least
+           one course
+        The return resppnse is string with prefix "true" or "false" based on whether rule is valid or
+        invalid. If invalid, then validation failure message is concatenated to the result wi
+      operationId: isRuleValid
+      parameters:
+      - name: ruleId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: checkAssociation
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      responses:
+        "200":
+          description: Returns the validity message
+          content:
+            '*/*':
+              schema:
+                type: string
+        "409":
+          description: Associating rule failed.
+          headers:
+            Error-Code:
+              description: The unique error code generated
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: Detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: string
   /rest/tee-time/slot/generation-rule/associate:
     post:
       tags:
@@ -7673,6 +7735,98 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/TeeTimeSlotDay'
+  /rest/tee-time/slot/list-in-nearby-clubs:
+    get:
+      tags:
+      - Tee-Time Slot API
+      summary: List Slots In Nearby Clubs
+      description: |
+        List the tee-time slots in the nearby clubs. For this method to work, you must pass the present location.
+      operationId: listSlotsInNearbyClubs
+      parameters:
+      - name: Location-Longitude
+        in: header
+        required: true
+        schema:
+          type: number
+          format: double
+      - name: Location-Latitude
+        in: header
+        required: true
+        schema:
+          type: number
+          format: double
+      - name: maxDistance
+        in: query
+        required: true
+        schema:
+          type: number
+          format: double
+      - name: forDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: fromTime
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/LocalTime'
+      - name: toTime
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/LocalTime'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClubTeeTimeSlots'
+  /rest/tee-time/slot/list-in-favorite-clubs:
+    get:
+      tags:
+      - Tee-Time Slot API
+      summary: List Slots In Favorite Clubs
+      description: |
+        List the tee-time slots from player's favorite clubs. Player must have at least one favorite club setup.
+      operationId: listSlotsInFavoriteClubs
+      parameters:
+      - name: Player-Id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: forDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: fromTime
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/LocalTime'
+      - name: toTime
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/LocalTime'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClubTeeTimeSlots'
 components:
   schemas:
     FeatureSubscription:
@@ -10210,6 +10364,134 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Availability'
+      example:
+        startDate: 2020-05-28
+        endDate: 2020-06-27
+        availabilities:
+        - availableOn: 2020-05-28
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-05-29
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-05-30
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-05-31
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-01
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-02
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-03
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-04
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-05
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-06
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-07
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-08
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-09
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-10
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-11
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-12
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-13
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-14
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-15
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-16
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-17
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-18
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-19
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-20
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-21
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-22
+          available: false
+          weeklyHoliday: true
+          reason: null
+        - availableOn: 2020-06-23
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-24
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-25
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-26
+          available: true
+          weeklyHoliday: false
+          reason: null
+        - availableOn: 2020-06-27
+          available: true
+          weeklyHoliday: false
+          reason: null
     Authority:
       type: object
       properties:
@@ -10376,7 +10658,7 @@ components:
       required:
       - courseId
       - teeOffDate
-      - teeOffTime
+      - teeOffTimeFrom
       type: object
       properties:
         courseId:
@@ -10386,7 +10668,9 @@ components:
           pattern: yyyy-MM-dd
           type: string
           format: date
-        teeOffTime:
+        teeOffTimeFrom:
+          $ref: '#/components/schemas/LocalTime'
+        teeOffTimeTo:
           $ref: '#/components/schemas/LocalTime'
         totalPlayers:
           type: integer
@@ -11034,6 +11318,8 @@ components:
         daysInAdvanceForBooking:
           type: integer
           format: int32
+        published:
+          type: boolean
         dayRules:
           uniqueItems: true
           type: array
@@ -11180,3 +11466,31 @@ components:
           $ref: '#/components/schemas/ClubCourseData'
         rule:
           $ref: '#/components/schemas/TeeTimeSlotGenerationRule'
+    ClubTeeTimeSlots:
+      type: object
+      properties:
+        club:
+          $ref: '#/components/schemas/ClubData'
+        distance:
+          type: number
+          format: double
+        distanceFrom:
+          $ref: '#/components/schemas/LocationData'
+        slots:
+          type: array
+          items:
+            $ref: '#/components/schemas/TeeTimeSlotDisplay'
+    LocationData:
+      required:
+      - latitude
+      - longitude
+      type: object
+      properties:
+        name:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double

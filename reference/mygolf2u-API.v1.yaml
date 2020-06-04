@@ -316,7 +316,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: deleteAd
+      operationId: deleteAd_1
       parameters:
       - name: adId
         in: query
@@ -334,7 +334,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: deleteAd_1
+      operationId: deleteAd
       parameters:
       - name: adId
         in: query
@@ -489,7 +489,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_2
+      operationId: searchOrganizerAds_5
       parameters:
       - name: organizerId
         in: query
@@ -536,7 +536,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_6
+      operationId: searchOrganizerAds_3
       parameters:
       - name: organizerId
         in: query
@@ -583,7 +583,7 @@ paths:
     options:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_3
+      operationId: searchOrganizerAds_1
       parameters:
       - name: organizerId
         in: query
@@ -630,7 +630,7 @@ paths:
     head:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_1
+      operationId: searchOrganizerAds_6
       parameters:
       - name: organizerId
         in: query
@@ -677,7 +677,7 @@ paths:
     patch:
       tags:
       - advertisement-rest-controller
-      operationId: searchOrganizerAds_5
+      operationId: searchOrganizerAds_2
       parameters:
       - name: organizerId
         in: query
@@ -868,7 +868,7 @@ paths:
     post:
       tags:
       - advertisement-rest-controller
-      operationId: deleteCompetitionAd
+      operationId: deleteCompetitionAd_1
       parameters:
       - name: competitionId
         in: query
@@ -892,7 +892,7 @@ paths:
     delete:
       tags:
       - advertisement-rest-controller
-      operationId: deleteCompetitionAd_1
+      operationId: deleteCompetitionAd
       parameters:
       - name: competitionId
         in: query
@@ -3531,7 +3531,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_2
+      operationId: recalculateHandicapIndexAfterCompetition_5
       parameters:
       - name: competitionId
         in: query
@@ -3556,7 +3556,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_6
+      operationId: recalculateHandicapIndexAfterCompetition_3
       parameters:
       - name: competitionId
         in: query
@@ -3581,7 +3581,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_3
+      operationId: recalculateHandicapIndexAfterCompetition_1
       parameters:
       - name: competitionId
         in: query
@@ -3606,7 +3606,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_1
+      operationId: recalculateHandicapIndexAfterCompetition_6
       parameters:
       - name: competitionId
         in: query
@@ -3631,7 +3631,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: recalculateHandicapIndexAfterCompetition_5
+      operationId: recalculateHandicapIndexAfterCompetition_2
       parameters:
       - name: competitionId
         in: query
@@ -3693,7 +3693,7 @@ paths:
     post:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_2
+      operationId: approvePlayerRound_5
       parameters:
       - name: playerRound
         in: query
@@ -3711,7 +3711,7 @@ paths:
     delete:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_6
+      operationId: approvePlayerRound_3
       parameters:
       - name: playerRound
         in: query
@@ -3729,7 +3729,7 @@ paths:
     options:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_3
+      operationId: approvePlayerRound_1
       parameters:
       - name: playerRound
         in: query
@@ -3747,7 +3747,7 @@ paths:
     head:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_1
+      operationId: approvePlayerRound_6
       parameters:
       - name: playerRound
         in: query
@@ -3765,7 +3765,7 @@ paths:
     patch:
       tags:
       - handicap-rest-controller
-      operationId: approvePlayerRound_5
+      operationId: approvePlayerRound_2
       parameters:
       - name: playerRound
         in: query
@@ -6720,6 +6720,31 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/CompetitionList'
+  /rest/club/get:
+    get:
+      tags:
+      - Club API
+      operationId: getClubInfo
+      parameters:
+      - name: clubId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: fullDetails
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ClubInfo'
   /rest/clubs/search:
     get:
       tags:
@@ -6769,31 +6794,6 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/ClubList'
-  /rest/club/get:
-    get:
-      tags:
-      - Club API
-      operationId: getClubInfo
-      parameters:
-      - name: clubId
-        in: query
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: fullDetails
-        in: query
-        required: false
-        schema:
-          type: boolean
-          default: true
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ClubInfo'
   /rest/club/courses:
     get:
       tags:
@@ -7015,7 +7015,7 @@ paths:
       description: |
         Deletes a given pricing plan. Deleting a pricing plan will be successful only if pricing plan isn't associated
         to any generation rule. On successful deletion all the associated prices and additional charges are deleted.
-      operationId: deletePricingPlan
+      operationId: deletePricingPlan_1
       parameters:
       - name: pricingPlanId
         in: path
@@ -7054,7 +7054,7 @@ paths:
       description: |
         Deletes a given pricing plan. Deleting a pricing plan will be successful only if pricing plan isn't associated
         to any generation rule. On successful deletion all the associated prices and additional charges are deleted.
-      operationId: deletePricingPlan_1
+      operationId: deletePricingPlan
       parameters:
       - name: pricingPlanId
         in: path
@@ -7144,7 +7144,7 @@ paths:
       summary: Delete Player From Booking
       description: |
         Deletes a player from the booking. You have to pass the bookingPlayerId to delete the player.
-      operationId: deleteBookingPlayer
+      operationId: deleteBookingPlayer_1
       parameters:
       - name: bookingPlayerId
         in: query
@@ -7183,7 +7183,7 @@ paths:
       summary: Delete Player From Booking
       description: |
         Deletes a player from the booking. You have to pass the bookingPlayerId to delete the player.
-      operationId: deleteBookingPlayer_1
+      operationId: deleteBookingPlayer
       parameters:
       - name: bookingPlayerId
         in: query
@@ -7262,6 +7262,63 @@ paths:
         List all the bookings created by a player where tee-off dates are greater or equal to a certain date.
         The player may or may not playing.
       operationId: bookingsByPlayer
+      parameters:
+      - name: playerId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: fromDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: maxBookings
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 30
+      responses:
+        "200":
+          description: Returns the list of bookings
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeeTimeBooking'
+        "409":
+          description: Deletion failed due to database constraints.
+          headers:
+            Error-Code:
+              description: The unique error code generated by the server
+              style: simple
+              schema:
+                type: string
+            Error-Message:
+              description: The detailed error message.
+              style: simple
+              schema:
+                type: string
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeeTimeBooking'
+  /rest/tee-time/booking/for-player:
+    get:
+      tags:
+      - Tee-Time Booking API
+      summary: Booking For Player
+      description: |
+        List all the bookings for a player where tee-off dates are greater or equal to a certain date.
+        The player must be in the playing list.
+      operationId: bookingsForPlayer
       parameters:
       - name: playerId
         in: query
@@ -11316,6 +11373,8 @@ components:
           $ref: '#/components/schemas/TeeTimePricingPlan'
         pricingPlanPromotional:
           $ref: '#/components/schemas/TeeTimePricingPlan'
+        currency:
+          $ref: '#/components/schemas/CurrencyData'
     TeeTimeSlotGenerationRule:
       type: object
       properties:
@@ -11451,6 +11510,8 @@ components:
           $ref: '#/components/schemas/TeeTimeSlot'
         available:
           type: boolean
+        currency:
+          $ref: '#/components/schemas/CurrencyData'
         originalPrices:
           type: object
           additionalProperties:
